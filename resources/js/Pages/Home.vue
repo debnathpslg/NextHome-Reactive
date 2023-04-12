@@ -4,7 +4,10 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="/">Home</a>
+                    <Link :href="route('home')">Home</Link>
+                </li>
+                <li class="breadcrumb-item">
+                    <Link :href="route('login')">Login</Link>
                 </li>
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
@@ -203,7 +206,7 @@
                     </div>
                     <!-- End Customers Card -->
 
-                    <!-- Reports -->
+                    <!-- News, Notices & Circulars -->
                     <div class="col-12">
                         <div class="card">
                             <div class="filter">
@@ -240,105 +243,13 @@
 
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    Reports <span>/Today</span>
-                                </h5>
-
-                                <!-- Line Chart -->
-                                <div id="reportsChart"></div>
-
-                                <!-- End Line Chart -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Reports -->
-
-                    <!-- Recent Sales -->
-                    <div class="col-12">
-                        <div class="card recent-sales overflow-auto">
-                            <div class="filter">
-                                <a
-                                    class="icon"
-                                    href="#"
-                                    data-bs-toggle="dropdown"
-                                    ><i class="bi bi-three-dots"></i
-                                ></a>
-                                <ul
-                                    class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
-                                >
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >Today</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >This Month</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >This Year</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Recent Sales <span>| Today</span>
+                                    News, Notices and Circulars
+                                    <span>| Today</span>
                                 </h5>
                             </div>
                         </div>
                     </div>
-                    <!-- End Recent Sales -->
-
-                    <!-- Top Selling -->
-                    <div class="col-12">
-                        <div class="card top-selling overflow-auto">
-                            <div class="filter">
-                                <a
-                                    class="icon"
-                                    href="#"
-                                    data-bs-toggle="dropdown"
-                                    ><i class="bi bi-three-dots"></i
-                                ></a>
-                                <ul
-                                    class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
-                                >
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >Today</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >This Month</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            >This Year</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body pb-0">
-                                <h5 class="card-title">
-                                    Top Selling <span>| Today</span>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Top Selling -->
+                    <!-- End of News, Notices & Circulars -->
                 </div>
             </div>
             <!-- End Left side columns -->
@@ -347,143 +258,19 @@
             <div class="col-lg-4">
                 <!-- Recent Activity -->
                 <div class="card">
-                    <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"
-                            ><i class="bi bi-three-dots"></i
-                        ></a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
-                        >
-                            <li class="dropdown-header text-start">
-                                <h6>Filter</h6>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#">Today</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Month</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Year</a>
-                            </li>
-                        </ul>
-                    </div>
-
                     <div class="card-body">
                         <h5 class="card-title">
-                            Recent Activity <span>| Today</span>
+                            Recent Activities <span>| Latest 20</span>
                         </h5>
-
                     </div>
                 </div>
                 <!-- End Recent Activity -->
-
-                <!-- Budget Report -->
-                <div class="card">
-                    <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"
-                            ><i class="bi bi-three-dots"></i
-                        ></a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
-                        >
-                            <li class="dropdown-header text-start">
-                                <h6>Filter</h6>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#">Today</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Month</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Year</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card-body pb-0">
-                        <h5 class="card-title">
-                            Budget Report <span>| This Month</span>
-                        </h5>
-                    </div>
-                </div>
-                <!-- End Budget Report -->
-
-                <!-- Website Traffic -->
-                <div class="card">
-                    <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"
-                            ><i class="bi bi-three-dots"></i
-                        ></a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
-                        >
-                            <li class="dropdown-header text-start">
-                                <h6>Filter</h6>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#">Today</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Month</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Year</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card-body pb-0">
-                        <h5 class="card-title">
-                            Website Traffic <span>| Today</span>
-                        </h5>
-
-                    </div>
-                </div>
-                <!-- End Website Traffic -->
-
-                <!-- News & Updates Traffic -->
-                <div class="card">
-                    <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"
-                            ><i class="bi bi-three-dots"></i
-                        ></a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
-                        >
-                            <li class="dropdown-header text-start">
-                                <h6>Filter</h6>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#">Today</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Month</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">This Year</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card-body pb-0">
-                        <h5 class="card-title">
-                            News &amp; Updates <span>| Today</span>
-                        </h5>
-
-                        <!-- End sidebar recent posts-->
-                    </div>
-                </div>
-                <!-- End News & Updates -->
             </div>
             <!-- End Right side columns -->
         </div>
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { Link } from "@inertiajs/vue3";
+</script>

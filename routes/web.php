@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', function () {
+        return redirect()->route('home');
+    });
+
+    Route::post('/login', [AuthController::class, 'authenticateUserForLogin'])->name('login.auth');
+    Route::put('/login', [AuthController::class, 'logoutUser'])->name('logout');
+});
+
+Route::get('/login', [AuthController::class, 'showLoginPage'])->name('login')->middleware('guest');
+
+Route::get('/test', function () {
+    return view('test');
+});
